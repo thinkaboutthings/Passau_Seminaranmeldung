@@ -13,7 +13,7 @@ fachsemester <- seq(1,n,by=1)
 data <- data.frame(matrikelnummer,erstw,zweitw,drittw,studiengang,fachsemester)
 rm(drittw,erstw,fachsemester,matrikelnummer,studiengang,zweitw)
 
-#hilfsvektor für staatsexamen und studiengang
+#hilfsvektor für staatsexamen und studiengang, Wahrscheinlichkeit kann hier adjustiert werden
 hilf_studiengang <-c(0,0,0,0,0,0,0,0,0,0,0,1,1,1)
 hilf_staatsexamen <-c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1)
 
@@ -27,5 +27,9 @@ for (i in 1:n){
   data$staatsexamen[i] <- sample(x=hilf_staatsexamen,size=1,replace=TRUE)
   data$fachsemester[i] <- floor(runif(1,0,7))
 }
-rm(i)
+rm(i,hilf_staatsexamen,hilf_studiengang)
+
+
+#####################Erstellen der leeren Seminardatensätze###############################
+
 
