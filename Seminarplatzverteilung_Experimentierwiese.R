@@ -35,6 +35,39 @@ rm(i,hilf_staatsexamen,hilf_studiengang)
 
 #####################Erstellen der leeren Seminardatensätze###############################
 
+#hilfsweise manuell erstellt
 names <- c("matrikelnummer","erstw","zweitw","drittw","studiengang","staatsexamen","fachsemester")
 
+Seminar_1 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_1) <- names
 
+Seminar_2 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_2) <- names
+
+Seminar_3 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_3) <- names
+
+Seminar_4 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_4) <- names
+
+Seminar_5 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_5) <- names
+
+Seminar_6 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_6) <- names
+
+Seminar_7 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_7) <- names
+
+Seminar_8 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(Seminar_8) <- names
+
+Seminar_9 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_9) <- names
+
+Seminar_10 <- data.frame(matrix(ncol = 7, nrow = 0))
+colnames(seminar_10) <- names
+
+rm(names)
+
+#################Zuteilung der Master-Studierenden#####################################################
