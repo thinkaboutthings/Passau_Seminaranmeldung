@@ -35,4 +35,6 @@ rm(i,hilf_staatsexamen,hilf_studiengang)
 
 #####################Erstellen der leeren Seminardatensätze###############################
 
+names <- c("matrikelnummer","erstw","zweitw","drittw","studiengang","staatsexamen","fachsemester")
+
 
