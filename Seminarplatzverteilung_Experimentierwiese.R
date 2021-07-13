@@ -41,7 +41,7 @@ raw <- data.frame(matrix(ncol = 7, nrow = 0))
 colnames(raw) <- names
 
 for (i in 1:seminaranzahl){
-  assign(paste("Seminar",i, sep = "_"),data.frame(raw()))
+  assign(paste("Seminar",i, sep = "_"),raw)
 }
 rm(i,names,raw)
 #################Zuteilung der Master-Studierenden#####################################################
