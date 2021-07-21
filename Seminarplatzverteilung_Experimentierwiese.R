@@ -1,9 +1,10 @@
 ###############packages############################################################
 library(dplyr)
+library(plyr)
 
 #######################Erstellen eines Testdatensatzes######################################################
 
-#Größe des Datensatz
+#Gr??e des Datensatz
 n<- 300
 
 #leerer Datensatz
@@ -50,8 +51,9 @@ rm(i,names,raw)
 #####Nur Masterstudierende#####
 data_master <- filter(data, studiengang==1)
 
-#Pro Seminar#
-#Seminar1#
+####Pro Seminar####
+###Erstwunsch###
+##Seminar1##
 if ((length(data_master$erstw[data_master$erstw==1]))>30) {
   Master_Seminar1 <- subset(data_master, erstw==1)
   Seminar_1 <- sample (Master_Seminar1, size=30)
@@ -59,7 +61,7 @@ if ((length(data_master$erstw[data_master$erstw==1]))>30) {
   Seminar_1 <- subset(data_master, data_master$erstw==1)
 }
 
-#Seminar2#
+##Seminar2##
 if ((length(data_master$erstw[data_master$erstw==2]))>30) {
   Master_Seminar2 <- subset(data_master, erstw==2)
   Seminar_2 <- sample (Master_Seminar2, size=30)
@@ -67,7 +69,7 @@ if ((length(data_master$erstw[data_master$erstw==2]))>30) {
   Seminar_2 <- subset(data_master, data_master$erstw==2)
 }
 
-#Seminar3#
+##Seminar3##
 if ((length(data_master$erstw[data_master$erstw==3]))>30) {
   Master_Seminar3 <- subset(data_master, erstw==3)
   Seminar_3 <- sample (Master_Seminar3, size=30)
@@ -75,7 +77,7 @@ if ((length(data_master$erstw[data_master$erstw==3]))>30) {
   Seminar_3 <- subset(data_master, data_master$erstw==3)
 }
 
-#Seminar4#
+##Seminar4##
 if ((length(data_master$erstw[data_master$erstw==4]))>30) {
   Master_Seminar4 <- subset(data_master, erstw==4)
   Seminar_4 <- sample (Master_Seminar4, size=30)
@@ -83,7 +85,7 @@ if ((length(data_master$erstw[data_master$erstw==4]))>30) {
   Seminar_4 <- subset(data_master, data_master$erstw==4)
 }
 
-#Seminar5#
+##Seminar5##
 if ((length(data_master$erstw[data_master$erstw==5]))>30) {
   Master_Seminar5 <- subset(data_master, erstw==5)
   Seminar_5 <- sample (Master_Seminar5, size=30)
@@ -91,7 +93,7 @@ if ((length(data_master$erstw[data_master$erstw==5]))>30) {
   Seminar_5 <- subset(data_master, data_master$erstw==5)
 }
 
-#Seminar6#
+##Seminar6##
 if ((length(data_master$erstw[data_master$erstw==6]))>30) {
   Master_Seminar6 <- subset(data_master, erstw==6)
   Seminar_6 <- sample (Master_Seminar6, size=30)
@@ -99,7 +101,7 @@ if ((length(data_master$erstw[data_master$erstw==6]))>30) {
   Seminar_6 <- subset(data_master, data_master$erstw==6)
 }
 
-#Seminar7#
+##Seminar7##
 if ((length(data_master$erstw[data_master$erstw==7]))>30) {
   Master_Seminar7 <- subset(data_master, erstw==7)
   Seminar_7 <- sample (Master_Seminar7, size=30)
@@ -107,7 +109,7 @@ if ((length(data_master$erstw[data_master$erstw==7]))>30) {
   Seminar_7 <- subset(data_master, data_master$erstw==7)
 }
 
-#Seminar8#
+##Seminar8##
 if ((length(data_master$erstw[data_master$erstw==8]))>30) {
   Master_Seminar8 <- subset(data_master, erstw==8)
   Seminar_8 <- sample (Master_Seminar8, size=30)
@@ -115,7 +117,7 @@ if ((length(data_master$erstw[data_master$erstw==8]))>30) {
   Seminar_8 <- subset(data_master, data_master$erstw==8)
 }
 
-#Seminar9#
+##Seminar9##
 if ((length(data_master$erstw[data_master$erstw==9]))>30) {
   Master_Seminar9 <- subset(data_master, erstw==9)
   Seminar_9 <- sample (Master_Seminar9, size=30)
@@ -123,7 +125,7 @@ if ((length(data_master$erstw[data_master$erstw==9]))>30) {
   Seminar_9 <- subset(data_master, data_master$erstw==9)
 }
 
-#Seminar10#
+##Seminar10##
 if ((length(data_master$erstw[data_master$erstw==10]))>30) {
   Master_Seminar10 <- subset(data_master, erstw==10)
   Seminar_10 <- sample (Master_Seminar10, size=30)
@@ -131,9 +133,38 @@ if ((length(data_master$erstw[data_master$erstw==10]))>30) {
   Seminar_10 <- subset(data_master, data_master$erstw==10)
 }
 
-##In Originaltabelle vermerken##
+
+###In Originaltabelle vermerken###
+##neue Variable Platz_erhalten##
+
+Seminar_1 <- Seminar_1 %>% mutate(Platz_erhalten = 1)
+Seminar_2 <- Seminar_2 %>% mutate(Platz_erhalten = 2)
+Seminar_3 <- Seminar_3 %>% mutate(Platz_erhalten = 3)
+Seminar_4 <- Seminar_4 %>% mutate(Platz_erhalten = 4)
+Seminar_5 <- Seminar_5 %>% mutate(Platz_erhalten = 5)
+Seminar_6 <- Seminar_6 %>% mutate(Platz_erhalten = 6)
+Seminar_7 <- Seminar_7 %>% mutate(Platz_erhalten = 7)
+Seminar_8 <- Seminar_8 %>% mutate(Platz_erhalten = 8)
+Seminar_9 <- Seminar_9 %>% mutate(Platz_erhalten = 9)
+Seminar_10 <- Seminar_10 %>% mutate(Platz_erhalten = 10)
 
 
+Zuteilung_master1 <- join_all(list(Seminar_1,Seminar_2,Seminar_3,Seminar_4, Seminar_5, Seminar_6, Seminar_7, Seminar_8, Seminar_9, Seminar_10), by = 'matrikelnummer', type = 'full')
+
+
+###Zweitwunsch###
+##Seminar1## 
+
+
+30-(length(Seminar_1)) #einsetzen#
+Master_Seminar1 #umbennen da Zweitwunsch#
+
+if ((length(data_master$erstw[data_master$erstw==1]))>30) {
+  Master_Seminar1 <- subset(data_master, erstw==1)
+  Seminar_1 <- sample (Master_Seminar1, size=30)
+} else {
+  Seminar_1 <- subset(data_master, data_master$erstw==1)
+}
 
 #####Nur Staatsexamen nÃ¤chstes Semester#####
 
@@ -147,21 +178,15 @@ data_staatsexamen <- filter(data, data$staatsexamen==1)
 arrange (data_semester, -data$fachsemester)
 
 
+#offene SeminarplÃ¤tze#
+30-(length(Seminar_1)) 
+30-(length(Seminar_2)) 
+30-(length(Seminar_3)) 
+30-(length(Seminar_4)) 
+30-(length(Seminar_5)) 
+30-(length(Seminar_6)) 
+30-(length(Seminar_7)) 
+30-(length(Seminar_8)) 
+30-(length(Seminar_9)) 
+30-(length(Seminar_10)) 
 
-
-
-
-
-data_wm_1 <-filter(data, data$studiengang==1)
-
-if (data$studiengang==1){
-  for (i in 1:seminaranzahl){
-    cat("seminar",i,sep="_")
-    
-  } 
-}
-
-cat("seminar",i,sep="_")
-
-aber<- c(1,2,3,4,4,5,6,4,5,6,3,4)
-doch<- sample(aber, size=7, replace=FALSE)
