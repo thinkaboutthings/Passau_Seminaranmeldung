@@ -3,7 +3,7 @@ library(dplyr)
 
 #######################Erstellen eines Testdatensatzes######################################################
 
-#GrÃ¶ÃŸe des Datensatz
+#Größe des Datensatz
 n<- 300
 
 #leerer Datensatz
@@ -50,54 +50,86 @@ rm(i,names,raw)
 #####Nur Masterstudierende#####
 data_master <- filter(data, studiengang==1)
 
-##weniger oder mehr als 30 pro Seminar? bei Erstwunsch##
-apply(data_master,MARGIN=2,table)
+#Pro Seminar#
+#Seminar1#
+if ((length(data_master$erstw[data_master$erstw==1]))>30) {
+  Master_Seminar1 <- subset(data_master, erstw==1)
+  Seminar_1 <- sample (Master_Seminar1, size=30)
+} else {
+  Seminar_1 <- subset(data_master, data_master$erstw==1)
+}
 
-###mit if noch als String formulieren?###
+#Seminar2#
+if ((length(data_master$erstw[data_master$erstw==2]))>30) {
+  Master_Seminar2 <- subset(data_master, erstw==2)
+  Seminar_2 <- sample (Master_Seminar2, size=30)
+} else {
+  Seminar_2 <- subset(data_master, data_master$erstw==2)
+}
 
-##wenn mehr als 30##
-Master_Seminar1 <- subset(data_master, erstw==1)
-Seminar_1 <- sample (Master_Seminar1, size=30)
+#Seminar3#
+if ((length(data_master$erstw[data_master$erstw==3]))>30) {
+  Master_Seminar3 <- subset(data_master, erstw==3)
+  Seminar_3 <- sample (Master_Seminar3, size=30)
+} else {
+  Seminar_3 <- subset(data_master, data_master$erstw==3)
+}
 
-Master_Seminar2 <- subset(data_master, erstw==2)
-Seminar_2 <- sample (Master_Seminar2, size=30)
+#Seminar4#
+if ((length(data_master$erstw[data_master$erstw==4]))>30) {
+  Master_Seminar4 <- subset(data_master, erstw==4)
+  Seminar_4 <- sample (Master_Seminar4, size=30)
+} else {
+  Seminar_4 <- subset(data_master, data_master$erstw==4)
+}
 
-Master_Seminar3 <- subset(data_master, erstw==3)
-Seminar_3 <- sample (Master_Seminar3, size=30)
+#Seminar5#
+if ((length(data_master$erstw[data_master$erstw==5]))>30) {
+  Master_Seminar5 <- subset(data_master, erstw==5)
+  Seminar_5 <- sample (Master_Seminar5, size=30)
+} else {
+  Seminar_5 <- subset(data_master, data_master$erstw==5)
+}
 
-Master_Seminar4 <- subset(data_master, erstw==4)
-Seminar_4 <- sample (Master_Seminar4, size=30)
+#Seminar6#
+if ((length(data_master$erstw[data_master$erstw==6]))>30) {
+  Master_Seminar6 <- subset(data_master, erstw==6)
+  Seminar_6 <- sample (Master_Seminar6, size=30)
+} else {
+  Seminar_6 <- subset(data_master, data_master$erstw==6)
+}
 
-Master_Seminar5 <- subset(data_master, erstw==5)
-Seminar_5 <- sample (Master_Seminar5, size=30)
+#Seminar7#
+if ((length(data_master$erstw[data_master$erstw==7]))>30) {
+  Master_Seminar7 <- subset(data_master, erstw==7)
+  Seminar_7 <- sample (Master_Seminar7, size=30)
+} else {
+  Seminar_7 <- subset(data_master, data_master$erstw==7)
+}
 
-Master_Seminar6 <- subset(data_master, erstw==6)
-Seminar_6 <- sample (Master_Seminar6, size=30)
+#Seminar8#
+if ((length(data_master$erstw[data_master$erstw==8]))>30) {
+  Master_Seminar8 <- subset(data_master, erstw==8)
+  Seminar_8 <- sample (Master_Seminar8, size=30)
+} else {
+  Seminar_8 <- subset(data_master, data_master$erstw==8)
+}
 
-Master_Seminar7 <- subset(data_master, erstw==7)
-Seminar_7 <- sample (Master_Seminar7, size=30)
+#Seminar9#
+if ((length(data_master$erstw[data_master$erstw==9]))>30) {
+  Master_Seminar9 <- subset(data_master, erstw==9)
+  Seminar_9 <- sample (Master_Seminar9, size=30)
+} else {
+  Seminar_9 <- subset(data_master, data_master$erstw==9)
+}
 
-Master_Seminar8 <- subset(data_master, erstw==8)
-Seminar_8 <- sample (Master_Seminar8, size=30)
-
-Master_Seminar9 <- subset(data_master, erstw==9)
-Seminar_9 <- sample (Master_Seminar9, size=30)
-
-Master_Seminar10 <- subset(data_master, erstw==10)
-Seminar_10 <- sample (Master_Seminar10, size=30)
-
-##wenn weniger als 30##
-
-Seminar_1 <- subset(data_master, data_master$erstw==1)
-Seminar_2 <- subset(data_master, data_master$erstw==2)
-Seminar_3 <- subset(data_master, data_master$erstw==3)
-Seminar_4 <- subset(data_master, data_master$erstw==4)
-Seminar_5 <- subset(data_master, data_master$erstw==5)
-Seminar_6 <- subset(data_master, data_master$erstw==6)
-Seminar_7 <- subset(data_master, data_master$erstw==7)
-Seminar_8 <- subset(data_master, data_master$erstw==8)
-Seminar_9 <- subset(data_master, data_master$erstw==9)
-Seminar_10 <- subset(data_master, data_master$erstw==10)
+#Seminar10#
+if ((length(data_master$erstw[data_master$erstw==10]))>30) {
+  Master_Seminar10 <- subset(data_master, erstw==10)
+  Seminar_10 <- sample (Master_Seminar10, size=30)
+} else {
+  Seminar_10 <- subset(data_master, data_master$erstw==10)
+}
 
 ##In Originaltabelle vermerken##
 
