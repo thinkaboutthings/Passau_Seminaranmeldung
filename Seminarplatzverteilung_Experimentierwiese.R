@@ -55,16 +55,32 @@ data_master <- filter(data, studiengang==1)
 #erstw ersetzen funktioniert aber nicht##
 
 #ERSTWUNSCH#
-Zuteilung_erstw <- function(Dataframe, Seminar, x) { 
+Zuteilung_erstw <- function(Dataframe, x) { 
+  Seminar <- subset (Dataframe)
   
   if ((length(Dataframe$erstw[Dataframe$erstw==x]))>(30-(length(Seminar)))) {
-    helper <- subset(Dataframe, erstw==x)
-    Seminar <- sample (helper, size=(30-(length(Seminar))))
+    helper_1 <- subset(Dataframe, erstw==x)
+    Seminar <- sample (helper_1, size=(30-(length(Seminar))))
   } else {
     Seminar <- subset(Dataframe, Dataframe$erstw==x)
   } 
-  return (Seminar)
+
+  Seminar <- Seminar %>% mutate(Platz_erhalten = x)
+  data_master <- join_all(list(Seminar, data_master) , by = 'matrikelnummer', type = 'full')
+  
+  
+  
+  return (data_master)
 }
+
+
+#Anwendung#
+
+for (i in 1:10){
+data_master <-  Zuteilung_erstw (data_master, i)
+}
+
+
 
 
 #ZWEITWUNSCH#
