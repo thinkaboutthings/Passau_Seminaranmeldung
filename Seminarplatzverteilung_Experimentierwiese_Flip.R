@@ -157,7 +157,7 @@ for (k in 20:1){
     data <-  Zuteilung_2(data,k,i)
   }
 }
-for (k in 20:1){
+for (k in 20:2){
   for (i in 1:10){
     data <-  Zuteilung_3(data,k,i)
   }
